@@ -1,0 +1,4 @@
+google-cloud-speech
+openai
+gtts
+SpeechRecognition
