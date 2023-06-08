@@ -11,14 +11,14 @@ openai.api_key = 'sk-****'
 
 r = sr.Recognizer()
 
-while True:  # sürekli dinlemek için bir while döngüsü
+while True:  
     with sr.Microphone() as source:
-        print("Bir şeyler söyleyin!")
-        # mikrofondan sesi yakalar
+        print("Say something!")
+        # captures sound from microphone
         audio = r.listen(source)
 
         try:
-            # Google'ın ses tanıma servisini kullanarak sesi metne çevir
+           
             soz = r.recognize_google(audio, language='en-EN')
             print("Ben:"+soz)
             if soz is not '':
@@ -41,9 +41,9 @@ while True:  # sürekli dinlemek için bir while döngüsü
               myobj.save("welcome.mp3")
               os.system("mpg321 welcome.mp3")
         except sr.UnknownValueError:
-            print("Google Speech Recognition söylediğinizi anlamadı")
+            print("Google Speech Recognition  dont understand")
         except sr.RequestError as e:
-            print(f"Google Speech Recognition servisi talebe yanıt veremedi; {e}")
+            print(f"Google Speech Recognition  not response; {e}")
 
 
 
